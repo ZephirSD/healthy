@@ -24,8 +24,11 @@ class NavbarHealthy extends StatelessWidget {
         ),
         body: Healthy(),
       ),
-      theme: ThemeData(
-        accentColor: Colors.purple,
+      theme: ThemeData.dark().copyWith(
+        colorScheme: ColorScheme.light(
+          primary: Colors.white,
+          secondary: Colors.purple,
+        ),
         scaffoldBackgroundColor: HexColor("#090c22"),
         textTheme: const TextTheme(
           bodyText2: TextStyle(color: Colors.white),
