@@ -19,13 +19,13 @@ class NavbarHealthy extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           tooltip: 'Increment',
-          backgroundColor: Theme.of(context).accentColor,
+          //backgroundColor: Colors.purple,
           child: const Icon(Icons.add),
         ),
         body: Healthy(),
       ),
       theme: ThemeData(
-        primaryColor: Colors.purple,
+        accentColor: Colors.purple,
         scaffoldBackgroundColor: HexColor("#090c22"),
         textTheme: const TextTheme(
           bodyText2: TextStyle(color: Colors.white),
