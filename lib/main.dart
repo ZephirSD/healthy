@@ -49,11 +49,62 @@ class _HealthyState extends State<Healthy> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text(
-          "Calcul en cours...",
-          style: Theme.of(context).textTheme.bodyText2,
-        ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.all(15.0),
+                height: 200.0,
+                width: 170.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xFF1D1E33),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(15.0),
+                height: 200.0,
+                width: 170.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xFF1D1E33),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.all(15.0),
+            height: 200.0,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Color(0xFF1D1E33),
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.all(15.0),
+                height: 200.0,
+                width: 170.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xFF1D1E33),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(15.0),
+                height: 200.0,
+                width: 170.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xFF1D1E33),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
