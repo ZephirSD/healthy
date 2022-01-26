@@ -1,103 +1,23 @@
-import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/material.dart';
+import 'inputPage.dart';
 
-void main() => runApp(NavbarHealthy());
+void main() {
+  runApp(const IMCApp());
+}
 
-class NavbarHealthy extends StatelessWidget {
-  const NavbarHealthy({Key? key}) : super(key: key);
+class IMCApp extends StatelessWidget {
+  const IMCApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // backgroundColor: HexColor("#090c22"),
-        appBar: AppBar(
-          title: Text("Calculateur IMC"),
-          backgroundColor: HexColor("#090c22"),
-        ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {},
-        //   tooltip: 'Increment',
-        //   //backgroundColor: Colors.purple,
-        //   child: const Icon(Icons.add),
-        // ),
-        body: Healthy(),
-      ),
+      home: InputPage(),
       theme: ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.light(
-          primary: Colors.white,
-          secondary: Colors.purple,
-        ),
-        scaffoldBackgroundColor: HexColor("#090c22"),
-        textTheme: const TextTheme(
-          bodyText2: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-  }
-}
-
-class Healthy extends StatefulWidget {
-  Healthy({Key? key}) : super(key: key);
-
-  @override
-  State<Healthy> createState() => _HealthyState();
-}
-
-class _HealthyState extends State<Healthy> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: MaCarte(),
-              ),
-              Expanded(
-                child: MaCarte(),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: MaCarte(),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: MaCarte(),
-              ),
-              Expanded(
-                child: MaCarte(),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class MaCarte extends StatelessWidget {
-  const MaCarte({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      height: 200.0,
-      width: 170.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xFF1D1E33),
+        primaryColor: Color(0xFF0A0E21),
+        appBarTheme: AppBarTheme(color: Color(0xFF0A0E21)),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Colors.purple),
       ),
     );
   }
