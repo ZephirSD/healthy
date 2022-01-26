@@ -26,37 +26,13 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: MaCarte(
                     activeColor,
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 120,
-                        ),
-                        Text(
-                          "HOMME",
-                          style: TextStyle(fontSize: 25),
-                        )
-                      ],
-                    ),
+                    Genre(FontAwesomeIcons.mars, "Homme"),
                   ),
                 ),
                 Expanded(
                   child: MaCarte(
                     activeColor,
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.venus,
-                          size: 120,
-                        ),
-                        Text(
-                          "FEMME",
-                          style: TextStyle(fontSize: 25),
-                        )
-                      ],
-                    ),
+                    Genre(FontAwesomeIcons.venus, "Femme"),
                   ),
                 ),
               ],
@@ -73,6 +49,29 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class Genre extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  Genre(this.icon, this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Icon(
+          icon,
+          size: 120,
+        ),
+        Text(
+          text,
+          style: TextStyle(fontSize: 25),
+        )
+      ],
     );
   }
 }
