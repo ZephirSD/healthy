@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Genre extends StatelessWidget {
+class SelectGenre extends StatelessWidget {
   final IconData icon;
   final String text;
-  Genre(this.icon, this.text);
+  SelectGenre(this.icon, this.text);
 
   @override
   Widget build(BuildContext context) {

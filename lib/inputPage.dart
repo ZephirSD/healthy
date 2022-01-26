@@ -5,6 +5,7 @@ import 'component/genre.dart';
 
 const activeColor = Color(0xFF1D1E33);
 const inactiveCouleur = Color(0xFF111328);
+enum Genre { Homme, Femme }
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -18,18 +19,17 @@ class _InputPageState extends State<InputPage> {
   Color carteHommeCouleur = inactiveCouleur;
   Color carteFemmeCouleur = inactiveCouleur;
 
-  updateColor(int genre) {
-    if (genre == 1 && carteHommeCouleur != activeColor) {
-      carteFemmeCouleur = inactiveCouleur;
-      carteHommeCouleur = activeColor;
-    } else if (genre == 2 && carteFemmeCouleur != activeColor) {
-      carteFemmeCouleur = activeColor;
-      carteHommeCouleur = inactiveCouleur;
-    } else if (genre == 1) {
-      carteHommeCouleur = inactiveCouleur;
-    } else if (genre == 2) {
-      carteFemmeCouleur = inactiveCouleur;
-    }
+  updateColor(Genre genre) {
+    // if (genre == Genre.Homme && carteHommeCouleur == inactiveCouleur) {
+    //   carteFemmeCouleur = inactiveCouleur;
+    //   carteHommeCouleur = activeColor;
+    // }
+    genre == Genre.Homme && carteHommeCouleur == inactiveCouleur
+        ? carteHommeCouleur = activeColor
+        : carteHommeCouleur = inactiveCouleur;
+    genre == Genre.Femme && carteFemmeCouleur == inactiveCouleur
+        ? carteFemmeCouleur = activeColor
+        : carteFemmeCouleur = inactiveCouleur;
   }
 
   @override
@@ -48,12 +48,12 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(1);
+                        updateColor(Genre.Homme);
                       });
                     },
                     child: MaCarte(
                       carteHommeCouleur,
-                      Genre(FontAwesomeIcons.mars, "Homme"),
+                      SelectGenre(FontAwesomeIcons.mars, "Homme"),
                     ),
                   ),
                 ),
@@ -61,13 +61,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(2);
+                        updateColor(Genre.Femme);
                         ;
                       });
                     },
                     child: MaCarte(
                       carteFemmeCouleur,
-                      Genre(FontAwesomeIcons.venus, "Femme"),
+                      SelectGenre(FontAwesomeIcons.venus, "Femme"),
                     ),
                   ),
                 ),
